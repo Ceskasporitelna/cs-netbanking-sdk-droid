@@ -1,9 +1,9 @@
 # CSNetbankingSDK
 This SDK allows you to access information from Česká spořitelna a.s. [Netbanking API](http://docs.ext0csnetbanking3.apiary.io/).
 
-#[CHANGELOG](CHANGELOG.md)
+# [CHANGELOG](CHANGELOG.md)
 
-#Requirements
+# Requirements
 - Android 4.1+
 - CSCoreSDK 0.16+
 - Gradle 2.8+
@@ -41,24 +41,24 @@ As CSCoreSDK is a dependency of CSNetbankingSDK, you are able to use it as well.
 
 **See [CoreSDK](https://github.com/Ceskasporitelna/cs-core-sdk-droid)**
 
-#Usage
+# Usage
 
 After you've installed the SDK using git submodules you will be able to use the module in your project.
 
-##Configuration
+## Configuration
 Before using CSAS SDKs in your application, you need to initialize it by providing it your WebApiKey:
 
 ```java
     // Set your WebApi key
     CoreSDK.getInstance().useWebApiKey( "YourApiKey" )
-    
+
     // Initialize netbanking
-    // Only if you haven't set up WebApiConfiguration for CoreSDK 
+    // Only if you haven't set up WebApiConfiguration for CoreSDK
     Netbanking.getInstance().init(WebApiConfiguration);
-    
+
     //Obtain your NetbankingClient
     NetbankingClient client = Netbanking.getInstance().getNetbankingClient();
-    
+
 ```
 **See [configuration guide](docs/configuration.md)** for all the available configuration options.
 
@@ -67,15 +67,15 @@ Before using CSAS SDKs in your application, you need to initialize it by providi
 
 **TIP!** - You can also learn Netbanking SDK by example in our [**demo**](https://github.com/Ceskasporitelna/csas-sdk-demo-droid)!
 
-##Proguard
+## Proguard
 The NetbankingSDK Proguard additions are necessary to be specified besides the recommended Android Proguard configuration. Copy the NetbankingSDK proguard rules to your project.
 
-**See [proguard-rules.pro](./netbanking/proguard-rules.pro).
+**See [consumer-proguard-rules.pro](./netbanking/consumer-proguard-rules.pro).
 
-#Contributing
+# Contributing
 Contributions are more than welcome!
 
 Please read our [contribution guide](CONTRIBUTING.md) to learn how to contribute to this project.
 
-#Terms and License
+# Terms and License
 Please read our [terms and conditions in license](LICENSE.md)

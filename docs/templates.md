@@ -13,7 +13,7 @@ This guide walks you through retrieving templates.
 
 ## 1. List all templates
 
-You can list all templates by calling the `list` method on [TemplatesResource](../netbanking/src/main/java/cz/csas/netbanking/templates/TemplatesResource.java). 
+You can list all templates by calling the `list` method on [TemplatesResource](../netbanking/src/main/java/cz/csas/netbanking/templates/TemplatesResource.java).
 
 ```java
 

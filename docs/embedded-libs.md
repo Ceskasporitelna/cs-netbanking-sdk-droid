@@ -1,6 +1,6 @@
 # Embedded libraries used in NetbankingSDK
 
-#Linked libraries to NetbankingSDK
+# Linked libraries to NetbankingSDK
 
 - Ceskasporitelna/cs-core-sdk-droid
 
