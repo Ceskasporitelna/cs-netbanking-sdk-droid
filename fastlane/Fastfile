@@ -32,6 +32,7 @@ platform :android do
   end
 
   lane :ci do
+    gradle(task: "clean")
     test
     rocket
   end
