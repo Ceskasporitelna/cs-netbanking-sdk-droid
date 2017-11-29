@@ -2,6 +2,9 @@
 
 ## [Unreleased]
 
+## Fixed
+- Locker access token provider automatically linked as default
+
 ## [1.1.0] - 2017-05-17
 
 ## Changed

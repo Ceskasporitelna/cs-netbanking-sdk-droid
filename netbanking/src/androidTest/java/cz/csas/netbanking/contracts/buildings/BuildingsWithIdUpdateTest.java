@@ -90,6 +90,6 @@ public class BuildingsWithIdUpdateTest extends NetbankingTest {
         assertEquals("CZ1580600000511050445627", accountNo.getCzIban());
         assertEquals("GIBACZPX", accountNo.getCzBic());
 
-        //assertEquals(SigningState.NONE, building.signing().getSigningState());
+        //FIXME unexpected travis crash on this line assertEquals(SigningState.NONE, building.signing().getSigningState());
     }
 }
