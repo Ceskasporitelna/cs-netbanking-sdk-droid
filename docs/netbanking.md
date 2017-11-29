@@ -55,7 +55,7 @@ This should be defined in your code after going through [configuration guide](./
         /**
          * IMPORTANT!
          *
-         * Let CoreSDK know that u use Locker and pass configuration object. 
+         * Let CoreSDK know that you use Locker and pass configuration object.
          */
         .useLocker(lockerConfig)
 

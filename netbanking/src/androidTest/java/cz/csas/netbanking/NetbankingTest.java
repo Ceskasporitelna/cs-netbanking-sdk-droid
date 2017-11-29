@@ -10,6 +10,7 @@ import java.io.InputStream;
 import java.util.Arrays;
 import java.util.UUID;
 
+import cz.csas.cscore.CoreSDK;
 import cz.csas.cscore.Environment;
 import cz.csas.cscore.client.WebApiConfiguration;
 import cz.csas.cscore.client.WebApiConfigurationImpl;
@@ -53,10 +54,10 @@ public abstract class NetbankingTest {
      * Set up.
      */
     @Before
-    public void setUp(){
-        mWebApiConfiguration = new WebApiConfigurationImpl(WEB_API_KEY_TEST,new Environment(TEST_BASE_URL,TEST_BASE_URL_OAUTH,false),"cs-CZ",null);
+    public void setUp() {
+        mWebApiConfiguration = new WebApiConfigurationImpl(WEB_API_KEY_TEST, new Environment(TEST_BASE_URL, TEST_BASE_URL_OAUTH, false), "cs-CZ", null);
         mXJudgeSessionHeader = UUID.randomUUID().toString();
-        mJudgeClient = new JudgeClient(JUDGE_BASE_URL);
+        mJudgeClient = new JudgeClient(JUDGE_BASE_URL, CoreSDK.getInstance().getLogger());
         mNetbankingClient = Netbanking.getInstance().init(mWebApiConfiguration).getNetbankingClient();
     }
 
@@ -80,7 +81,7 @@ public abstract class NetbankingTest {
      * @throws IOException the io exception
      */
     public static void assertPng(InputStream stream) throws IOException {
-        byte[] expected = {(byte)0x89,  0x50,  0x4e,  0x47,  0x0d,  0x0a,  0x1a,  0x0a};
+        byte[] expected = {(byte) 0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a};
         byte[] topOfStream = new byte[expected.length];
         stream.read(topOfStream, 0, expected.length);
         assertTrue(Arrays.equals(expected, topOfStream));

@@ -2,6 +2,7 @@ package cz.csas.netbanking;
 
 import cz.csas.cscore.CoreSDK;
 import cz.csas.cscore.client.WebApiConfiguration;
+import cz.csas.cscore.locker.LockerAccessTokenProvider;
 
 /**
  * The type Netbanking.
@@ -26,12 +27,13 @@ class NetbankingImpl extends Netbanking {
         return netbankingClient;
     }
 
-    private Netbanking init() {
-        WebApiConfiguration webApiConfiguration = CoreSDK.getInstance().getWebApiConfiguration();
+    private void init() {
+        CoreSDK core = CoreSDK.getInstance();
+        WebApiConfiguration webApiConfiguration = core.getWebApiConfiguration();
         if (webApiConfiguration != null && webApiConfiguration.getWebApiKey() != null && webApiConfiguration.getEnvironment() != null && webApiConfiguration.getEnvironment().getApiContextBaseUrl() != null) {
             netbankingClient = new NetbankingClient(webApiConfiguration);
+            netbankingClient.setAccessTokenProvider(new LockerAccessTokenProvider(core.getLocker(), core.getLogger()));
         } else
             throw new CsNetbankingError(CsNetbankingError.Kind.BAD_INITIALIZATION);
-        return this;
     }
 }
