@@ -29,7 +29,7 @@ import static junit.framework.Assert.assertFalse;
 public class AccountsTransactionsHistoryListTest extends NetbankingTest {
     private final String X_JUDGE_CASE = "accounts.withId.transactionsHistory.list";
     private CountDownLatch mAccountsTransactionsHistorySignal;
-    private AccountTransactionsListResponse mAccountTransactionsListResponse;
+    private AccountTransactionsHistoryListResponse mAccountTransactionsHistoryListResponse;
 
     @Override
     public void setUp() {
@@ -44,16 +44,16 @@ public class AccountsTransactionsHistoryListTest extends NetbankingTest {
     @Test
     public void testAccountTransactionsHistoryList() {
 
-        AccountTransactionsParameters parameters = new AccountTransactionsParameters.Builder()
+        AccountTransactionsHistoryParameters parameters = new AccountTransactionsHistoryParameters.Builder()
                 .setDateStart(TimeUtils.getISO8601Date("2014-06-01T00:00:00+02:00"))
                 .setDateEnd(TimeUtils.getISO8601Date("2014-06-30T00:00:00+02:00"))
                 .setPagination(new Pagination(0, 2))
                 .build();
 
-        mNetbankingClient.getAccountsResource().withId("CZ5508000000000379554193").getTransactionsHistoryResource().list(parameters, new CallbackWebApi<AccountTransactionsListResponse>() {
+        mNetbankingClient.getAccountsResource().withId("CZ5508000000000379554193").getTransactionsHistoryResource().list(parameters, new CallbackWebApi<AccountTransactionsHistoryListResponse>() {
             @Override
-            public void success(AccountTransactionsListResponse accountTransactionsListResponse) {
-                mAccountTransactionsListResponse = accountTransactionsListResponse;
+            public void success(AccountTransactionsHistoryListResponse accountTransactionsHistoryListResponse) {
+                mAccountTransactionsHistoryListResponse = accountTransactionsHistoryListResponse;
                 mAccountsTransactionsHistorySignal.countDown();
             }
 
@@ -69,7 +69,7 @@ public class AccountsTransactionsHistoryListTest extends NetbankingTest {
             e.printStackTrace();
         }
 
-        List<AccountTransaction> transactions = mAccountTransactionsListResponse.getAccountTransactions();
+        List<AccountTransaction> transactions = mAccountTransactionsHistoryListResponse.getAccountTransactions();
         for (AccountTransaction transaction : transactions) {
             AccountParty accountParty = transaction.getAccountParty();
             Amount amount = transaction.getAmount();

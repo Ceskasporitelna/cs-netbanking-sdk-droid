@@ -10,7 +10,7 @@ import cz.csas.cscore.webapi.PaginatedListResponse;
  * @author Jan Hauser <jan.hauser@applifting.cz>
  * @since 22/01/2018.
  */
-public class AccountTransactionsListResponse extends PaginatedListResponse<AccountTransaction, AccountTransactionsListResponse> {
+public class AccountTransactionsHistoryListResponse extends PaginatedListResponse<AccountTransaction, AccountTransactionsHistoryListResponse> {
 
     @CsExpose
     @CsSerializedName(value = "transactions", alternate = "items")

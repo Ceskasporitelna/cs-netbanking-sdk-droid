@@ -11,7 +11,7 @@ import cz.csas.cscore.webapi.Pagination;
  * @author Jan Hauser <jan.hauser@applifting.cz>
  * @since 22/01/2018.
  */
-public class AccountTransactionsParameters extends PaginatedParameters {
+public class AccountTransactionsHistoryParameters extends PaginatedParameters {
 
     private final String PARAM_DATE_START = "dateStart";
     private final String PARAM_DATE_END = "dateEnd";
@@ -19,7 +19,7 @@ public class AccountTransactionsParameters extends PaginatedParameters {
     private final Date dateStart;
     private final Date dateEnd;
 
-    public AccountTransactionsParameters(Builder builder) {
+    public AccountTransactionsHistoryParameters(Builder builder) {
         super(builder.pagination);
         this.dateStart = builder.dateStart;
         this.dateEnd = builder.dateEnd;
@@ -94,8 +94,8 @@ public class AccountTransactionsParameters extends PaginatedParameters {
          *
          * @return parameters
          */
-        public AccountTransactionsParameters build() {
-            return new AccountTransactionsParameters(this);
+        public AccountTransactionsHistoryParameters build() {
+            return new AccountTransactionsHistoryParameters(this);
         }
     }
 }

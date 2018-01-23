@@ -12,7 +12,7 @@ import cz.csas.cscore.webapi.apiquery.PaginatedListEnabled;
  * @author Jan Hauser <jan.hauser@applifting.cz>
  * @since 22 /01/2018.
  */
-public class AccountTransactionsHistoryResource extends Resource implements PaginatedListEnabled<AccountTransactionsParameters, AccountTransactionsListResponse> {
+public class AccountTransactionsHistoryResource extends Resource implements PaginatedListEnabled<AccountTransactionsHistoryParameters, AccountTransactionsHistoryListResponse> {
 
     /**
      * Instantiates a new resource.
@@ -31,7 +31,7 @@ public class AccountTransactionsHistoryResource extends Resource implements Pagi
      * @param callback   callback
      */
     @Override
-    public void list(AccountTransactionsParameters parameters, CallbackWebApi<AccountTransactionsListResponse> callback) {
-        ResourceUtils.callPaginatedList(this, parameters, null, AccountTransactionsListResponse.class, callback);
+    public void list(AccountTransactionsHistoryParameters parameters, CallbackWebApi<AccountTransactionsHistoryListResponse> callback) {
+        ResourceUtils.callPaginatedList(this, parameters, null, AccountTransactionsHistoryListResponse.class, callback);
     }
 }
