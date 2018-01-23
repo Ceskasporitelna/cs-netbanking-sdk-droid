@@ -89,6 +89,15 @@ public class AccountResource extends InstanceResource implements GetEnabled<Main
     }
 
     /**
+     * Get account transactions history resource
+     *
+     * @return account transactions history resource
+     */
+    public AccountTransactionsHistoryResource getTransactionsHistoryResource() {
+        return new AccountTransactionsHistoryResource(appendPathWith("transactions"), getClient());
+    }
+
+    /**
      * Get reservations resource.
      *
      * @return the reservations resource

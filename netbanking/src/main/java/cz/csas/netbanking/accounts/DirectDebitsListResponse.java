@@ -20,7 +20,7 @@ public class DirectDebitsListResponse extends PaginatedListResponse<DirectDebit,
 
     @Override
     protected List<DirectDebit> getItems() {
-        return null;
+        return directDebits;
     }
 
     public List<DirectDebit> getDirectDebits() {

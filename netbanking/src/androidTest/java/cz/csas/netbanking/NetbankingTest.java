@@ -55,6 +55,7 @@ public abstract class NetbankingTest {
      */
     @Before
     public void setUp() {
+        //CoreSDK.getInstance().useLogger(new LogManagerImpl("TEST", LogLevel.DETAILED_DEBUG));
         mWebApiConfiguration = new WebApiConfigurationImpl(WEB_API_KEY_TEST, new Environment(TEST_BASE_URL, TEST_BASE_URL_OAUTH, false), "cs-CZ", null);
         mXJudgeSessionHeader = UUID.randomUUID().toString();
         mJudgeClient = new JudgeClient(JUDGE_BASE_URL, CoreSDK.getInstance().getLogger());

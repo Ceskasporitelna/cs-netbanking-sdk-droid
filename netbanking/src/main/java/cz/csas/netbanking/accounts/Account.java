@@ -231,6 +231,17 @@ public class Account extends WebApiEntity {
     }
 
     /**
+     * Convenience getter for getting accounts's transactions history resource.
+     *
+     * @return the transactions history resource
+     */
+    public AccountTransactionsHistoryResource getTransactionsHistoryResource() {
+        if (resource instanceof AccountResource)
+            return ((AccountResource) resource).getTransactionsHistoryResource();
+        return null;
+    }
+
+    /**
      * Convenience getter for getting accounts's services resource.
      *
      * @return the services resource
