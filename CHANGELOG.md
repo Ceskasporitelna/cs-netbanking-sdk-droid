@@ -2,19 +2,23 @@
 
 ## [Unreleased]
 
+### Fixed
+- (TOOLING) Update tooling to remove potential vulnerability
+- Update build files for API 28
+
 ## [1.2.0] - 2018-01-23
 
-## Added
+### Added
 - Account transactions history resource with paginated list
 
 ## [1.1.1] - 2017-11-29
 
-## Fixed
+### Fixed
 - Locker access token provider automatically linked as default
 
 ## [1.1.0] - 2017-05-17
 
-## Changed
+### Changed
 
 - CSNetbankingSDK released to JCenter
 
