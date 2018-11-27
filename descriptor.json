@@ -2,15 +2,15 @@
     "files": [
         {
             "includePattern": "./netbanking/build/libs/(.*)",
-            "uploadPattern": "cz/csas/cs-netbanking-sdk/1.2.0/$1"
+            "uploadPattern": "cz/csas/cs-netbanking-sdk/1.2.1/$1"
         },
         {
             "includePattern": "./netbanking/build/outputs/aar/(cs-netbanking-sdk-release-.*?.aar)",
-            "uploadPattern": "cz/csas/cs-netbanking-sdk/1.2.0/cs-netbanking-sdk-1.2.0.aar"
+            "uploadPattern": "cz/csas/cs-netbanking-sdk/1.2.1/cs-netbanking-sdk-1.2.1.aar"
         },
         {
             "includePattern": "./netbanking/build/poms/(.*)",
-            "uploadPattern": "cz/csas/cs-netbanking-sdk/1.2.0/cs-netbanking-sdk-1.2.0.pom"
+            "uploadPattern": "cz/csas/cs-netbanking-sdk/1.2.1/cs-netbanking-sdk-1.2.1.pom"
         }
     ],
     "package": {
@@ -30,8 +30,8 @@
     "publish": true,
     "version": {
         "gpgSign": true,
-        "name": "1.2.0",
-        "released": "2018-01-23",
-        "vcs_tag": "1.2.0"
+        "name": "1.2.1",
+        "released": "2018-11-27",
+        "vcs_tag": "1.2.1"
     }
 }
